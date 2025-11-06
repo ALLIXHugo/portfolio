@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="metaTitle">Hugo ALLIX - Étudiant en Gestion de Données</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#accueil" class="nav-logo">HA.</a>
+            <ul class="nav-links">
+                <li><a href="#a-propos" data-key="navAbout">À propos</a></li>
+                <li><a href="#formations" data-key="navEducation">Formations</a></li>
+                <li><a href="#experiences" data-key="navExperience">Expériences</a></li>
+                <li><a href="#portfolio" data-key="navPortfolio">Portfolio</a></li>
+                <li><a href="#references" data-key="referencesTitle">Références</a></li> <li><a href="#contact" data-key="navContact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button id="lang-fr" class="lang-btn active">FR</button>
+                    <span>|</span>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+                <a href="assets/cv/CV-Hugo-Allix-FR.pdf" id="cv-download-link" download="CV-Hugo-Allix-FR.pdf" class="btn-cv" data-key="cvButton">Télécharger mon CV</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <h1 class="fade-in" data-key="heroTitle">Hugo ALLIX</h1>
+                <p class="fade-in" data-key="heroSubtitle">Étudiant en gestion & exploitation de données.</p>
+                <a href="#portfolio" class="btn-main fade-in" data-key="heroButton">Découvrir mes projets</a>
+            </div>
+        </section>
+
+        <section id="a-propos" class="container">
+            <h2 class="section-title fade-in" data-key="aboutTitle">À Propos</h2>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="assets/images/photo-profil.jpg" alt="Photo de Hugo ALLIX" data-key="aboutImgAlt">
+                </div>
+                <div class="about-text">
+                    <h3 data-key="aboutHeadline">La précision d'un analyste, la rigueur d'un sportif.</h3>
+                    <p data-key="aboutP1">Passionné de sports d'endurance, j'aborde le monde de la donnée avec la même méthodologie : patience, stratégie et une attention particulière aux détails. Extraire l'information pertinente d'un jeu de données complexe demande la même concentration qu'une épreuve de longue haleine.</p>
+                    <p data-key="aboutP2">Actuellement en parcours "Administration, Gestion et Exploitation de Données", je me forme pour transformer les données brutes en décisions éclairées. Je développe des compétences en administration de bases de données, en analyse de données et dans les technologies Big Data.</p>
+                    <div class="skills">
+                        <span>SQL</span>
+                        <span>C#</span>
+                        <span>UML</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        
+        <section id="portfolio" class="container">
+            <h2 class="section-title fade-in" data-key="portfolioTitle">Mes Projets Universitaires</h2>
+            <div class="portfolio-grid fade-in">
+                
+                <div class="project-card">
+                    <img src="assets/images/image-projet-poule.png" alt="Aperçu du projet Chicken Catch" class="project-image">
+                    
+                    <div class="card-overlay">
+                        <h3 data-key="project1Title">Jeu 'Chicken Catch'</h3>
+                        <p class="card-subtitle" data-key="project1Subtitle">Un jeu de scoring simple et addictif.</p>
+                        
+                        <ul class="project-details">
+                            <li><i class="fa-solid fa-calendar-days"></i><strong data-key="dateLabel">Date :</strong> <span data-key="project1Date">Déc. 2024</span></li>
+                            <li><i class="fa-solid fa-cube"></i><strong data-key="typeLabel">Type :</strong> <span data-key="project1Type">Jeu-Vidéo</span></li>
+                            <li><i class="fa-solid fa-microchip"></i><strong data-key="techLabel">Technologie :</strong> <span data-key="project1Tech">C# (WPF)</span></li>
+                            <li><i class="fa-solid fa-school"></i><strong data-key="contextLabel">Contexte :</strong> <span data-key="project1Context">Projet Universitaire (SAE101)</span></li>
+                        </ul>
+                        <a href="https://github.com/ALLIXHugo/SAE1.01_1.02" target="_blank" class="btn-access" data-key="accessButton">Accéder</a>
+                    </div>
+                </div> 
+
+                <div class="project-card">
+                    <img src="assets/images/image-projet-nicolas.jpg" alt="Aperçu du projet Nicolas" class="project-image">
+                    
+                    <div class="card-overlay">
+                        <h3 data-key="project2Title">Système de Gestion 'Nicolas'</h3>
+                        <p class="card-subtitle" data-key="project2Subtitle">Application de gestion pour les caves Nicolas.</p>
+                        
+                        <ul class="project-details">
+                            <li><i class="fa-solid fa-calendar-days"></i><strong data-key="dateLabel">Date :</strong> <span data-key="project2Date">Mai 2025</span></li>
+                            <li><i class="fa-solid fa-cube"></i><strong data-key="typeLabel">Type :</strong> <span data-key="project2Type">Application de bureau</span></li>
+                            <li><i class="fa-solid fa-microchip"></i><strong data-key="techLabel">Technologie :</strong> <span data-key="project2Tech">UML, SGBD (PostgreSQL), C#</span></li>
+                            <li><i class="fa-solid fa-school"></i><strong data-key="contextLabel">Contexte :</strong> <span data-key="project2Context">Projet Universitaire (SAE201)</span></li>
+                        </ul>
+                        <a href="https://github.com/Jules-Cadoux/SAE201" target="_blank" class="btn-access" data-key="accessButton">Accéder</a>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <section id="formations" class="container">
+            <h2 class="section-title fade-in" data-key="educationTitle">Formations</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-date" data-key="edu1Date">2024 - Présent</div>
+                    <div class="timeline-content">
+                        <h3 data-key="edu1Title">BUT Informatique (Bac+3)</h3>
+                        <h4 data-key="edu1School">Université Savoie Mont-Blanc, IUT d'Annecy</h4>
+                        <p data-key="edu1Desc">Parcours "Administration, Gestion et Exploitation de Données". Deuxième année en cours.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" data-key="edu2Date">2021 - 2024</div>
+                    <div class="timeline-content">
+                        <h3 data-key="edu2Title">Baccalauréat Français STI2D</h3>
+                        <h4 data-key="edu2School">Lycée International de Ferney-Voltaire</h4>
+                        <p data-key="edu2Desc">Option Systèmes d'Information et Numérique (SIN). Obtenu avec Mention Très Bien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experiences" class="container">
+            <h2 class="section-title fade-in" data-key="experienceTitle">Expériences</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-date" data-key="exp1Date">Oct. 2025 - Jan. 2026</div>
+                    <div class="timeline-content">
+                        <h3 data-key="exp1Title">Développement d'une Application Client (SAE)</h3>
+                        <h4 data-key="exp1Company">IUT d'Annecy</h4>
+                        <p data-key="exp1Desc">Conception d'une application complète en équipe, de l'analyse des besoins à la sécurisation des données, en passant par l'optimisation de la base de données.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" data-key="exp2Date">Mars - Mai 2025</div>
+                    <div class="timeline-content">
+                        <h3 data-key="exp2Title">Création d'une Base de Données (SAE)</h3>
+                        <h4 data-key="exp2Company">IUT d'Annecy</h4>
+                        <p data-key="exp2Desc">Conception et exploitation d'une base de données PostgreSQL en groupe. Modélisation, scripting SQL et création de rapports Power BI.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" data-key="exp3Date">Mars - Mai 2022</div>
+                    <div class="timeline-content">
+                        <h3 data-key="exp3Title">Aide aux Devoirs</h3>
+                        <h4 data-key="exp3Company">CSC Les Libellules, Gex</h4>
+                        <p data-key="exp3Desc">Accompagnement hebdomadaire d'élèves en difficulté, développement de compétences pédagogiques et création d'un climat de confiance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="container">
+            <h2 class="section-title fade-in" data-key="referencesTitle">Références</h2>
+            <div class="references-grid fade-in">
+                <div class="reference-card">
+                    <h3 data-key="ref1Name">Pascal COLIN</h3>
+                    <ul class="reference-details">
+                        <li><i class="fa-solid fa-briefcase"></i> <span data-key="ref1Title">Professeur d'UML et SQL</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span data-key="ref1Location">IUT Annecy, Annecy (74)</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:pascal.colin@univ-smb.fr" data-key="ref1Email">pascal.colin@univ-smb.fr</a></li>
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:+33450666005" data-key="ref1Phone">+33 4 50 66 60 05</a></li>
+                    </ul>
+                </div>
+                <div class="reference-card">
+                    <h3 data-key="ref2Name">Benoit DIARD</h3>
+                    <ul class="reference-details">
+                        <li><i class="fa-solid fa-briefcase"></i> <span data-key="ref2Title">Professeur de programmation</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span data-key="ref2Location">IUT Annecy, Annecy (74)</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:benoit.diard@univ-smb.fr" data-key="ref2Email">benoit.diard@univ-smb.fr</a></li>
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:+33450092348" data-key="ref2Phone">+33 4 50 09 23 48</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+             <h2 class="section-title fade-in" data-key="contactTitle">Contact</h2>
+             <p class="contact-intro fade-in" data-key="contactIntro">Prêt à explorer des données, discuter d'une opportunité ou d'un projet ? Contactez-moi.</p>
+             <div class="contact-info fade-in">
+                <a href="mailto:hugo.allix@etu.univ-smb.fr" class="btn-main" data-key="contactButton">Envoyez-moi un email</a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hugo-allix-5a4014359/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/ALLIXHugo" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-key="footerText">&copy; 2025 Hugo ALLIX.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
