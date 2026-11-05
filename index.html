@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title data-key="metaTitle">Hugo ALLIX - Données & IA</title>
+        <meta name="description" content="Portfolio de Hugo ALLIX, étudiant en BUT Informatique (données & IA) en alternance.">
+        <meta name="theme-color" content="#f3efe4">
+
+        <!-- Thème appliqué avant l'affichage pour éviter un flash de la mauvaise couleur -->
+        <script>
+            (function () {
+                var t = null;
+                try { t = localStorage.getItem('theme'); } catch (e) {}
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            })();
+        </script>
+
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c94a16'/%3E%3Cpath d='M8 50 26 20l8 13 6-8 16 25z' fill='%23fff'/%3E%3C/svg%3E">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- Fond topographique (généré en JS) -->
+        <div class="topo-bg" aria-hidden="true"></div>
+
+        <header class="site-header">
+            <nav>
+                <a href="#accueil" class="nav-logo" aria-label="Hugo ALLIX">
+                    <svg viewBox="0 0 40 28" aria-hidden="true"><path d="M1 27 14 6l6 9 5-6 14 18z"/></svg>
+                    <span>HA.</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#a-propos" data-key="navAbout">À propos</a></li>
+                    <li><a href="#skills" data-key="navSkills">Compétences</a></li>
+                    <li><a href="#portfolio" data-key="navPortfolio">Projets</a></li>
+                    <li><a href="#formations" data-key="navEducation">Formations</a></li>
+                    <li><a href="#experiences" data-key="navExperience">Expériences</a></li>
+                    <li><a href="#references" data-key="navReferences">Références</a></li>
+                    <li><a href="#contact" data-key="navContact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="lang-switcher" role="group" aria-label="Langue / Language">
+                        <button id="lang-fr" class="lang-btn active" type="button">FR</button>
+                        <button id="lang-en" class="lang-btn" type="button">EN</button>
+                    </div>
+                    <button class="icon-btn theme-toggle" type="button" data-aria-key="ariaTheme" aria-label="Changer de thème (clair / sombre)">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <a href="assets/cv/CV-Hugo-Allix-FR.pdf" id="cv-download-link" download="CV-Hugo-Allix-FR.pdf" class="btn btn-primary btn-cv">
+                        <i class="fa-solid fa-download"></i><span data-key="cvButton">Mon CV</span>
+                    </a>
+                    <button class="icon-btn nav-toggle" type="button" aria-expanded="false" data-aria-key="ariaMenuOpen" aria-label="Ouvrir le menu">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="scroll-progress" aria-hidden="true"><span></span></div>
+        </header>
+
+        <main>
+            <!-- ===================== ACCUEIL ===================== -->
+            <section id="accueil" class="hero">
+                <div class="hero-bg" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <p class="hero-eyebrow fade-in" data-key="heroEyebrow">BUT Informatique · 3e année · Alternance</p>
+                    <h1 class="fade-in" data-key="heroTitle">Hugo ALLIX</h1>
+                    <p class="hero-rotator fade-in">
+                        <span data-key="heroLead">Je construis</span>
+                        <span class="rotator">des bases de données fiables</span><span class="caret" aria-hidden="true"></span>
+                    </p>
+                    <div class="hero-actions fade-in">
+                        <a href="#portfolio" class="btn btn-primary btn-lg" data-key="heroButton">Découvrir mes projets</a>
+                        <a href="#contact" class="btn btn-glass btn-lg" data-key="heroButton2">Me contacter</a>
+                    </div>
+                </div>
+
+                <!-- Crêtes en parallaxe -->
+                <div class="ridges" aria-hidden="true">
+                    <svg class="ridge ridge-back" data-speed="0.18" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 210 L90 150 L170 185 L260 105 L350 160 L430 120 L520 175 L610 90 L700 150 L790 115 L880 170 L980 80 L1070 140 L1160 110 L1250 165 L1350 100 L1440 150 L1440 320 L0 320Z"/></svg>
+                    <svg class="ridge ridge-mid" data-speed="0.1" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 240 L120 190 L200 225 L300 170 L390 215 L480 185 L580 235 L690 165 L780 210 L860 190 L960 240 L1060 175 L1150 215 L1250 180 L1340 225 L1440 195 L1440 320 L0 320Z"/></svg>
+                    <svg class="ridge ridge-front" data-speed="0.04" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 285 L140 250 L260 275 L380 240 L520 280 L650 255 L780 285 L900 248 L1030 278 L1160 252 L1300 282 L1440 258 L1440 320 L0 320Z"/></svg>
+                </div>
+
+                <a href="#a-propos" class="scroll-hint" aria-label="Défiler">
+                    <span data-key="heroScroll">Défiler</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </section>
+
+            <!-- ===================== CHIFFRES ===================== -->
+            <div class="stats container-wide">
+                <div class="stat fade-in">
+                    <span class="stat-value" data-count="3">0</span>
+                    <span class="stat-label" data-key="stat1Label">ans de BUT Informatique</span>
+                </div>
+                <div class="stat fade-in">
+                    <span class="stat-value" data-count="auto-projects">0</span>
+                    <span class="stat-label" data-key="stat2Label">projets réalisés</span>
+                </div>
+                <div class="stat fade-in">
+                    <span class="stat-value" data-count="2">0</span>
+                    <span class="stat-label" data-key="stat3Label">expériences en entreprise</span>
+                </div>
+                <div class="stat fade-in">
+                    <span class="stat-value" data-count="1">0</span>
+                    <span class="stat-label" data-key="stat4Label">serveur d'IA local mis en service</span>
+                </div>
+            </div>
+
+            <!-- ===================== À PROPOS ===================== -->
+            <section id="a-propos" class="section">
+                <div class="container">
+                    <header class="section-head fade-in">
+                        <span class="kicker"><span data-key="kickerWord">Étape</span> 01</span>
+                        <h2 class="section-title" data-key="aboutTitle">À propos</h2>
+                    </header>
+                    <div class="about-content">
+                        <figure class="about-photo fade-in">
+                            <img src="assets/images/photo-profil.jpg" alt="Photo de Hugo ALLIX" data-alt-key="aboutImgAlt" width="900" height="977" loading="lazy">
+                            <figcaption class="about-badge"><span class="pulse-dot"></span><span data-key="aboutBadge">En alternance · Données & IA</span></figcaption>
+                        </figure>
+                        <div class="about-text fade-in">
+                            <h3 data-key="aboutHeadline">La précision d'un analyste, la rigueur d'un sportif.</h3>
+                            <p data-key="aboutP1">Passionné de sports d'endurance, j'aborde le monde de la donnée avec la même méthode : patience, stratégie et attention aux détails. Extraire l'information utile d'un jeu de données complexe demande la même concentration qu'une épreuve de longue haleine.</p>
+                            <p data-key="aboutP2">En 3e année de BUT Informatique, parcours « Administration, Gestion et Exploitation de Données », je suis en alternance au Pôle Formation UIMM 74. J'y mets en place un serveur d'IA local et un agent de veille automatisé. Ce qui me plaît : construire des systèmes de données fiables, de la base jusqu'au tableau de bord, et aujourd'hui jusqu'à l'IA.</p>
+                            <div class="about-links">
+                                <a href="https://www.linkedin.com/in/hugo-allix-5a4014359/" target="_blank" rel="noopener" class="chip chip-link"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                                <a href="https://github.com/ALLIXHugo" target="_blank" rel="noopener" class="chip chip-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== COMPÉTENCES ===================== -->
+            <section id="skills" class="section section-alt">
+                <div class="container">
+                    <header class="section-head fade-in">
+                        <span class="kicker"><span data-key="kickerWord">Étape</span> 02</span>
+                        <h2 class="section-title" data-key="skillsTitle">Compétences</h2>
+                        <p class="section-intro" data-key="skillsIntro">Les outils que j'utilise en cours, en stage et en alternance.</p>
+                    </header>
+
+                    <div class="skills-grid stagger">
+                        <article class="skill-card fade-in" style="--tone: var(--tone-data)">
+                            <h3><span class="skill-icon"><i class="fa-solid fa-database"></i></span><span data-key="skillCat1">Données & BI</span></h3>
+                            <ul class="chips">
+                                <li class="chip"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</li>
+                                <li class="chip"><i class="devicon-microsoftsqlserver-plain colored"></i> SQL Server</li>
+                                <li class="chip"><i class="fa-solid fa-chart-column" style="color:#d9a21b"></i> Power BI</li>
+                                <li class="chip"><i class="fa-solid fa-diagram-project" style="color:#ff5722"></i> UML / Merise</li>
+                                <li class="chip"><i class="fa-solid fa-sitemap"></i> <span data-key="skillModel">Modélisation MCD / MLD</span></li>
+                                <li class="chip"><i class="fa-solid fa-shuffle"></i> ETL</li>
+                            </ul>
+                        </article>
+
+                        <article class="skill-card fade-in" style="--tone: var(--tone-ai)">
+                            <h3><span class="skill-icon"><i class="fa-solid fa-microchip"></i></span><span data-key="skillCat2">IA & automatisation</span></h3>
+                            <ul class="chips">
+                                <li class="chip"><i class="fa-solid fa-brain"></i> <span data-key="skillLLM">LLM open source</span></li>
+                                <li class="chip"><i class="fa-solid fa-server"></i> Ollama</li>
+                                <li class="chip"><i class="fa-solid fa-comments"></i> Open WebUI</li>
+                                <li class="chip"><i class="fa-solid fa-link"></i> LangChain</li>
+                                <li class="chip"><i class="fa-solid fa-spider"></i> <span data-key="skillScraping">Scraping web</span></li>
+                            </ul>
+                        </article>
+
+                        <article class="skill-card fade-in" style="--tone: var(--tone-dev)">
+                            <h3><span class="skill-icon"><i class="fa-solid fa-code"></i></span><span data-key="skillCat3">Développement</span></h3>
+                            <ul class="chips">
+                                <li class="chip"><i class="devicon-python-plain colored"></i> Python</li>
+                                <li class="chip"><i class="devicon-csharp-plain colored"></i> C#</li>
+                                <li class="chip"><i class="devicon-php-plain colored"></i> PHP</li>
+                                <li class="chip"><i class="devicon-laravel-original colored"></i> Laravel</li>
+                                <li class="chip"><i class="devicon-symfony-original"></i> Symfony</li>
+                                <li class="chip"><i class="devicon-vuejs-plain colored"></i> Vue.js</li>
+                                <li class="chip"><i class="devicon-html5-plain colored"></i> HTML / CSS / JS</li>
+                            </ul>
+                        </article>
+
+                        <article class="skill-card fade-in" style="--tone: var(--tone-web)">
+                            <h3><span class="skill-icon"><i class="fa-solid fa-terminal"></i></span><span data-key="skillCat4">Système & outils</span></h3>
+                            <ul class="chips">
+                                <li class="chip"><i class="devicon-linux-plain"></i> Linux</li>
+                                <li class="chip"><i class="devicon-windows8-original colored"></i> Windows</li>
+                                <li class="chip"><i class="devicon-docker-plain colored"></i> Docker</li>
+                                <li class="chip"><i class="devicon-git-plain colored"></i> Git</li>
+                                <li class="chip"><i class="fa-solid fa-cube" style="color:#2f6db5"></i> VirtualBox</li>
+                                <li class="chip"><i class="fa-solid fa-lock"></i> <span data-key="skillCrypto">Chiffrement (AES, RSA)</span></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="skills-extra">
+                        <article class="skill-card fade-in" style="--tone: var(--tone-other)">
+                            <h3><span class="skill-icon"><i class="fa-solid fa-person-hiking"></i></span><span data-key="softTitle">Savoir-être</span></h3>
+                            <ul class="soft-list">
+                                <li><i class="fa-solid fa-check"></i><span data-key="soft1">Ordonné</span></li>
+                                <li><i class="fa-solid fa-check"></i><span data-key="soft2">Sens de l'organisation</span></li>
+                                <li><i class="fa-solid fa-check"></i><span data-key="soft3">Fiable</span></li>
+                                <li><i class="fa-solid fa-check"></i><span data-key="soft4">Autonome</span></li>
+                            </ul>
+                        </article>
+
+                        <article class="skill-card fade-in" style="--tone: var(--tone-data)">
+                            <h3><span class="skill-icon"><i class="fa-solid fa-language"></i></span><span data-key="langTitle">Langues</span></h3>
+                            <ul class="lang-list">
+                                <li>
+                                    <div><strong data-key="langFr">Français</strong><span data-key="langFrLevel">Langue maternelle</span></div>
+                                    <span class="level" data-level="5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+                                </li>
+                                <li>
+                                    <div><strong data-key="langEn">Anglais</strong><span data-key="langEnLevel">Intermédiaire sup.</span></div>
+                                    <span class="level" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+                                </li>
+                                <li>
+                                    <div><strong data-key="langDe">Allemand</strong><span data-key="langDeLevel">Élémentaire</span></div>
+                                    <span class="level" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== PROJETS ===================== -->
+            <section id="portfolio" class="section">
+                <div class="container">
+                    <header class="section-head fade-in">
+                        <span class="kicker"><span data-key="kickerWord">Étape</span> 03</span>
+                        <h2 class="section-title" data-key="portfolioTitle">Mes projets</h2>
+                        <p class="section-intro" data-key="portfolioIntro">De l'entreprise aux projets universitaires, une sélection de ce que j'ai construit.</p>
+                    </header>
+
+                    <div class="portfolio-filters fade-in" role="group">
+                        <button class="filter-btn active" type="button" data-filter="all" data-key="filtreTous">Tous</button>
+                        <button class="filter-btn" type="button" data-filter="dev" data-key="filtreDev">Développement</button>
+                        <button class="filter-btn" type="button" data-filter="data" data-key="filtreData">Données / Gestion</button>
+                        <button class="filter-btn" type="button" data-filter="web" data-key="filtreWeb">Web</button>
+                        <button class="filter-btn" type="button" data-filter="autre" data-key="filtreAutre">Autre</button>
+                    </div>
+
+                    <!--
+                        Chaque carte : data-category (filtres), data-tone (couleur), data-icon (icône Font Awesome),
+                        data-year (repère sur la couverture), data-seed (forme du relief, change-la pour un autre dessin).
+                    -->
+                    <div class="portfolio-grid">
+
+                        <article class="project-card fade-in" data-category="data dev web" data-tone="data" data-icon="fa-hospital" data-year="2026" data-seed="hopital-manche">
+                            <div class="project-cover">
+                                <span class="cover-tag"><i class="fa-solid fa-briefcase"></i><span data-key="tagCompany">Entreprise</span></span>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project7Date">Avril - Juin 2026</span> · <span data-key="project7Type">Application web / BI</span></p>
+                                <h3 data-key="project7Title">Plateforme BI hospitalière</h3>
+                                <p class="project-desc" data-key="project7Subtitle">Développement d'un module décisionnel pour la DSI de l'Hôpital Privé de la Manche : entrepôt de données PostgreSQL, scripts ETL en Python et tableaux de bord Vue.js / Chart.js intégrés à une application Symfony.</p>
+                                <p class="tech-list" data-key="project7Tech">Python, PostgreSQL, Docker, Symfony, Vue.js, Chart.js</p>
+                                <p class="project-context"><i class="fa-solid fa-hospital-user"></i><span data-key="project7Context">Stage de 2e année de BUT</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <span class="private-label"><i class="fa-solid fa-lock"></i><span data-key="privateLabel">Projet confidentiel</span></span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="data dev" data-tone="ai" data-icon="fa-microchip" data-year="2026" data-seed="dgx-veille">
+                            <div class="project-cover">
+                                <span class="cover-tag cover-tag-live"><span class="pulse-dot"></span><span data-key="tagOngoing">En cours</span></span>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project8Date">Août 2026 - en cours</span> · <span data-key="project8Type">Infra IA & pipeline de données</span></p>
+                                <h3 data-key="project8Title">Serveur IA local & agent de veille</h3>
+                                <p class="project-desc" data-key="project8Subtitle">Choix et mise en service d'un serveur d'IA local (NVIDIA DGX Spark) pour faire tourner des LLM open source au sein de la structure, puis développement d'un pipeline de veille nocturne qui collecte les offres d'emploi des entreprises de la région, en extrait les informations clés et les qualifie pour les équipes commerciales. Sécurité et protection des données travaillées avec le RSSI.</p>
+                                <p class="tech-list" data-key="project8Tech">Linux, Ollama, Open WebUI, Docker, Python, LangChain, SQL Server</p>
+                                <p class="project-context"><i class="fa-solid fa-briefcase"></i><span data-key="project8Context">Alternance (BUT 3e année)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <span class="private-label"><i class="fa-solid fa-lock"></i><span data-key="privateLabel">Projet confidentiel</span></span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="web dev" data-tone="other" data-icon="fa-shield-halved" data-year="2026" data-seed="cryptodrive">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project9Date">Mars 2026</span> · <span data-key="project9Type">Application web sécurisée</span></p>
+                                <h3 data-key="project9Title">CryptoDrive</h3>
+                                <p class="project-desc" data-key="project9Subtitle">Drive de stockage et de partage de fichiers « zero-knowledge » : chaque fichier est chiffré en AES-256 avec une clé unique, elle-même protégée par la clé publique RSA-2048 de l'utilisateur. Le partage re-chiffre la clé pour le destinataire sans dupliquer le fichier, et le serveur ne voit jamais ni les fichiers en clair ni les clés privées.</p>
+                                <p class="tech-list" data-key="project9Tech">Symfony, PHP, PostgreSQL, AES-256, RSA-2048</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project9Context">Projet universitaire (fin de module)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="http://51.83.36.122/~allhug/projet_crypto/public/" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-solid fa-arrow-up-right-from-square"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="web data dev" data-tone="web" data-icon="fa-paw" data-year="2025" data-seed="hunimalis">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project4Date">Oct. 2025 - Jan. 2026</span> · <span data-key="project4Type">Site web</span></p>
+                                <h3 data-key="project4Title">Site web d'Hunimalis</h3>
+                                <p class="project-desc" data-key="project4Subtitle">Mon équipe et moi avons conçu et développé le site en suivant tout le cycle de mise en œuvre : modélisation (BPMN, MCD/MLD), création de la base de données avec des jeux de test, puis programmation des fonctionnalités.</p>
+                                <p class="tech-list" data-key="project4Tech">BPMN, MCD/MLD, PostgreSQL, Laravel</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project4Context">Projet universitaire (SAE301)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="https://github.com/ALLIXHugo/hunimalis" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-brands fa-github"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="web" data-tone="dev" data-icon="fa-mountain-sun" data-year="2025" data-seed="portfolio">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project3Date">Oct. 2025</span> · <span data-key="project3Type">Site web</span></p>
+                                <h3 data-key="project3Title">Mon portfolio</h3>
+                                <p class="project-desc" data-key="project3Subtitle">J'ai conçu seul ce portfolio, un site personnel qui présente mon profil et mes compétences, avec différentes sections (à propos, formations, expériences, projets) pour mettre en valeur mon parcours.</p>
+                                <p class="tech-list" data-key="project3Tech">HTML, CSS, JavaScript</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project3Context">Projet universitaire (Dev Web)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="http://51.83.36.122/~allhug/portfolio" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-solid fa-arrow-up-right-from-square"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="dev data" data-tone="other" data-icon="fa-wine-bottle" data-year="2025" data-seed="nicolas">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project2Date">Mai - Juin 2025</span> · <span data-key="project2Type">Application de bureau</span></p>
+                                <h3 data-key="project2Title">Système de gestion « Nicolas »</h3>
+                                <p class="project-desc" data-key="project2Subtitle">Avec mon groupe, nous avons refait l'application de gestion des stocks de Nicolas, enseigne de vente de vin. Nous avons conçu l'UML et rédigé le cahier des charges, puis développé le code relié à une base de données fournie.</p>
+                                <p class="tech-list" data-key="project2Tech">UML, PostgreSQL, C#</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project2Context">Projet universitaire (SAE201)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="https://github.com/Jules-Cadoux/SAE201" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-brands fa-github"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="data" data-tone="data" data-icon="fa-database" data-year="2025" data-seed="sae204-bdd">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project5Date">Avril - Juin 2025</span> · <span data-key="project5Type">Base de données</span></p>
+                                <h3 data-key="project5Title">Base de données</h3>
+                                <p class="project-desc" data-key="project5Subtitle">Mon équipe et moi avons conçu une base de données à partir d'un besoin identifié. Après le MCD et le MPD, nous avons écrit le script SQL et créé des jeux de données pour tester la cohérence du modèle, puis présenté les résultats dans des tableaux de bord Power BI clairs et interactifs.</p>
+                                <p class="tech-list" data-key="project5Tech">PowerAMC, PostgreSQL, Excel, Power BI</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project5Context">Projet universitaire (SAE204)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="https://github.com/ALLIXHugo/database" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-brands fa-github"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="dev" data-tone="dev" data-icon="fa-gamepad" data-year="2024" data-seed="chicken-catch">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project1Date">Nov. - Déc. 2024</span> · <span data-key="project1Type">Jeu vidéo</span></p>
+                                <h3 data-key="project1Title">Jeu « Chicken Catch »</h3>
+                                <p class="project-desc" data-key="project1Subtitle">Avec mon groupe, nous avons réalisé un jeu dont le mot contrainte était « poule ». Le fermier doit attraper le plus de poules possible sans se faire toucher par les poules contaminées.</p>
+                                <p class="tech-list" data-key="project1Tech">C#, WPF</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project1Context">Projet universitaire (SAE101)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="https://github.com/ALLIXHugo/SAE1.01_1.02" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-brands fa-github"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card fade-in" data-category="autre" data-tone="other" data-icon="fa-compact-disc" data-year="2024" data-seed="vm-ubuntu">
+                            <div class="project-cover"></div>
+                            <div class="project-body">
+                                <p class="project-meta"><span data-key="project6Date">Oct. - Nov. 2024</span> · <span data-key="project6Type">Guide d'installation</span></p>
+                                <h3 data-key="project6Title">Guide d'installation d'une VM</h3>
+                                <p class="project-desc" data-key="project6Subtitle">Mon équipe et moi avons rédigé un guide d'installation pas à pas d'une machine virtuelle Ubuntu Mate 20.04.</p>
+                                <p class="tech-list" data-key="project6Tech">Oracle VirtualBox, Ubuntu, Word</p>
+                                <p class="project-context"><i class="fa-solid fa-school"></i><span data-key="project6Context">Projet universitaire (SAE103)</span></p>
+                                <div class="project-actions">
+                                    <button class="btn btn-ghost js-details" type="button" data-key="detailsButton">Détails</button>
+                                    <a href="https://github.com/ALLIXHugo/InstallationVM" target="_blank" rel="noopener" class="btn btn-link"><i class="fa-brands fa-github"></i><span data-key="accessButton">Accéder</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== FORMATIONS ===================== -->
+            <section id="formations" class="section section-alt">
+                <div class="container">
+                    <header class="section-head fade-in">
+                        <span class="kicker"><span data-key="kickerWord">Étape</span> 04</span>
+                        <h2 class="section-title" data-key="educationTitle">Formations</h2>
+                    </header>
+                    <ol class="timeline">
+                        <li class="timeline-item fade-in is-current">
+                            <div class="timeline-date" data-key="edu1Date">2024 - 2027</div>
+                            <div class="timeline-content">
+                                <h3 data-key="edu1Title">BUT Informatique (Bac+3)</h3>
+                                <h4 data-key="edu1School">Université Savoie Mont Blanc, IUT d'Annecy</h4>
+                                <p data-key="edu1Desc">Parcours « Administration, Gestion et Exploitation de Données », avec une part d'intelligence artificielle. 3e année en alternance.</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item fade-in">
+                            <div class="timeline-date" data-key="edu2Date">2021 - 2024</div>
+                            <div class="timeline-content">
+                                <h3 data-key="edu2Title">Baccalauréat STI2D</h3>
+                                <h4 data-key="edu2School">Lycée International de Ferney-Voltaire</h4>
+                                <p data-key="edu2Desc">Option Systèmes d'Information et Numérique (SIN). Obtenu avec mention Très Bien.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- ===================== EXPÉRIENCES ===================== -->
+            <section id="experiences" class="section">
+                <div class="container">
+                    <header class="section-head fade-in">
+                        <span class="kicker"><span data-key="kickerWord">Étape</span> 05</span>
+                        <h2 class="section-title" data-key="experienceTitle">Expériences</h2>
+                    </header>
+                    <ol class="timeline">
+                        <li class="timeline-item fade-in is-current">
+                            <div class="timeline-date"><span data-key="exp1Date">Août 2026 - Sept. 2027</span> <span class="live-pill"><span class="pulse-dot"></span><span data-key="tagOngoing">En cours</span></span></div>
+                            <div class="timeline-content">
+                                <h3 data-key="exp1Title">Alternance : infrastructure IA, agent de veille et sécurisation</h3>
+                                <h4 data-key="exp1Company">Pôle Formation UIMM 74, Annecy</h4>
+                                <p data-key="exp1Desc">Choix et mise en service d'un serveur d'IA local (NVIDIA DGX Spark, Ollama, Open WebUI), développement d'un agent de veille automatisé sur les offres d'emploi pour les commerciaux (Python, SQL Server), maintenance des rapports Power BI et accompagnement des équipes aux usages de l'IA.</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item fade-in">
+                            <div class="timeline-date" data-key="exp2Date">Avril - Juin 2026</div>
+                            <div class="timeline-content">
+                                <h3 data-key="exp2Title">Stage : Data Warehouse & application de pilotage</h3>
+                                <h4 data-key="exp2Company">Hôpital Privé de la Manche, Saint-Lô</h4>
+                                <p data-key="exp2Desc">Conception d'une architecture de données sous PostgreSQL, création de scripts ETL en Python et développement d'une application métier avec Symfony.</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item fade-in">
+                            <div class="timeline-date" data-key="exp3Date">Mars - Avril 2026</div>
+                            <div class="timeline-content">
+                                <h3 data-key="exp3Title">Développement BDD & visualisation</h3>
+                                <h4 data-key="exp3Company">Université Savoie Mont Blanc</h4>
+                                <p data-key="exp3Desc">Optimisation PostgreSQL, cybersécurité, création de tableaux de bord interactifs Power BI et intégration de solutions d'IA. Gestion de projet Agile.</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item fade-in">
+                            <div class="timeline-date" data-key="exp4Date">Oct. 2025 - Jan. 2026</div>
+                            <div class="timeline-content">
+                                <h3 data-key="exp4Title">Développement d'une application client</h3>
+                                <h4 data-key="exp4Company">Université Savoie Mont Blanc</h4>
+                                <p data-key="exp4Desc">Conception d'une application complète en équipe, de l'analyse des besoins à la sécurisation des données et l'optimisation de la BDD.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- ===================== RÉFÉRENCES ===================== -->
+            <section id="references" class="section section-alt">
+                <div class="container">
+                    <header class="section-head fade-in">
+                        <span class="kicker"><span data-key="kickerWord">Étape</span> 06</span>
+                        <h2 class="section-title" data-key="referencesTitle">Références</h2>
+                    </header>
+                    <div class="references-grid">
+                        <article class="reference-card fade-in">
+                            <div class="ref-avatar" aria-hidden="true">JH</div>
+                            <div>
+                                <h3 data-key="ref1Name">Josselin HERVIEU</h3>
+                                <p class="ref-role" data-key="ref1Title">Directeur des systèmes d'information (DSI)</p>
+                                <ul class="reference-details">
+                                    <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=H%C3%B4pital+Priv%C3%A9+de+la+Manche+Saint-L%C3%B4" target="_blank" rel="noopener" data-key="ref1Location">Hôpital Privé de la Manche, Saint-Lô (50)</a></li>
+                                    <li><i class="fa-solid fa-envelope"></i><a href="mailto:josselin.hervieu@hpmanche.fr">josselin.hervieu@hpmanche.fr</a></li>
+                                    <li><i class="fa-solid fa-phone"></i><a href="tel:+33660611057">+33 6 60 61 10 57</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="reference-card fade-in">
+                            <div class="ref-avatar" aria-hidden="true">BD</div>
+                            <div>
+                                <h3 data-key="ref2Name">Benoit DIARD</h3>
+                                <p class="ref-role" data-key="ref2Title">Professeur de programmation</p>
+                                <ul class="reference-details">
+                                    <li><i class="fa-solid fa-location-dot"></i><a href="https://maps.google.com/?q=IUT+Annecy" target="_blank" rel="noopener" data-key="ref2Location">IUT d'Annecy, Annecy (74)</a></li>
+                                    <li><i class="fa-solid fa-envelope"></i><a href="mailto:benoit.diard@univ-smb.fr">benoit.diard@univ-smb.fr</a></li>
+                                    <li><i class="fa-solid fa-phone"></i><a href="tel:+33450092348">+33 4 50 09 23 48</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== CONTACT ===================== -->
+            <section id="contact" class="section">
+                <div class="container">
+                    <div class="contact-card fade-in">
+                        <div class="contact-topo" aria-hidden="true"></div>
+                        <span class="kicker"><i class="fa-solid fa-flag-checkered"></i> <span data-key="kickerFinish">Arrivée</span></span>
+                        <h2 class="section-title" data-key="contactHeadline">On fait un bout de chemin ensemble ?</h2>
+                        <p class="contact-intro" data-key="contactIntro">Une opportunité, un projet data ou IA, une question sur mon parcours : écrivez-moi.</p>
+                        <div class="contact-actions">
+                            <a href="mailto:hugo.allix@etu.univ-smb.fr" class="btn btn-primary btn-lg"><i class="fa-solid fa-paper-plane"></i><span data-key="contactButton">Envoyez-moi un email</span></a>
+                            <a href="assets/cv/CV-Hugo-Allix-FR.pdf" download="CV-Hugo-Allix-FR.pdf" class="btn btn-ghost btn-lg js-cv-link"><i class="fa-solid fa-file-arrow-down"></i><span data-key="cvButton">Mon CV</span></a>
+                        </div>
+                        <p class="contact-mail">hugo.allix@etu.univ-smb.fr</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/hugo-allix-5a4014359/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/ALLIXHugo" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <svg class="footer-profile" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 L0 44 L80 36 L150 40 L240 22 L300 30 L380 12 L440 26 L520 18 L600 34 L680 20 L760 28 L840 8 L920 24 L1000 16 L1080 30 L1160 20 L1240 32 L1320 24 L1440 38 L1440 60Z"/></svg>
+            <p>&copy; <span class="js-year">2026</span> Hugo ALLIX. <span data-key="footerText">Conçu et codé à la main en HTML, CSS et JavaScript.</span></p>
+        </footer>
+
+        <a href="#accueil" class="back-to-top" data-aria-key="ariaTop" aria-label="Retour au sommet">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+
+        <!-- Fenêtre de détail d'un projet -->
+        <dialog class="project-dialog" aria-labelledby="dialog-title">
+            <div class="dialog-inner">
+                <button class="icon-btn dialog-close" type="button" data-aria-key="dialogClose" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                <div class="dialog-cover"></div>
+                <div class="dialog-body">
+                    <p class="project-meta dialog-meta"></p>
+                    <h3 id="dialog-title"></h3>
+                    <p class="dialog-desc"></p>
+                    <div class="dialog-tech"></div>
+                    <p class="project-context dialog-context"></p>
+                    <div class="dialog-actions"></div>
+                </div>
+            </div>
+        </dialog>
+
+        <script src="lang/fr.js"></script>
+        <script src="lang/en.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
